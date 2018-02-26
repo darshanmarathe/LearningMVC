@@ -9,21 +9,21 @@ using System.Web.Mvc;
 namespace MVCDemos.Controllers
 {
     using MVCDemos.Models;
+    using MVCDemos.Repositories;
 
     public class HomeController : Controller
     {
+        private IUserRepository repo;
 
-
+        public HomeController()
+        {
+            repo = new UserRepository();
+        }
         // GET: Home
         public ActionResult Index()
         {
-            var u = new User();
-
-            u.UserName = "darshan";
-            u.FirstName = "darshan";
-            u.LastName = "Marathe";
-
-            return View(u);
+         
+            return View(repo.Get_All_Users());
         }
 
 

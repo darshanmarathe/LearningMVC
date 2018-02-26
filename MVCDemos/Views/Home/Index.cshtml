@@ -1,0 +1,25 @@
+﻿@model  MVCDemos.Models.User
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<h2>Index</h2>
+
+
+<span>@Model.UserName</span>
+
+<div>@Model.FirstName  @Model.LastName</div>
+
+
+<form action="/Home/index" method="post">
+    FirstName
+    <input type="text" name="FirstName" value="@Model.FirstName" /> <br />
+    Lastname
+    <input type="text" name="FirstName" value="@Model.LastName" /> <br />
+    Username
+    <input type="text" name="FirstName" value="@Model.UserName" /> <br />
+
+    <input type="submit" name="submit" value="Save" />
+
+</form>
